@@ -5,7 +5,6 @@ module.exports = function(app, db) {
       res.json(result);
     });
   });
-
   app.post("/api/new", function(req, res) {
     db.Item.create({
       name: req.body.name,
@@ -15,7 +14,6 @@ module.exports = function(app, db) {
       res.json(result);
     });
   });
-
   app.put("/api/update/:id", function(req, res) {
     db.Item.update(
       {
@@ -30,7 +28,6 @@ module.exports = function(app, db) {
       res.json(result);
     });
   });
-
   app.delete("/api/delete/:id", function(req, res) {
     db.Item.destroy({
       where: {
