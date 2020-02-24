@@ -23,3 +23,5 @@ This project is a testing on the sequelize ORM for node.js. You can play around 
 
 Only GET and POST method is implemented in the front-end. The front end is tweaked a little with bootstrap for better visualisation.
 Please ensure that the db name assigned in the config.js in config folder for dev mode is same as the one created in MySQL.
+
+- to log the queries set { "logging": false, } as true
