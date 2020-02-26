@@ -1,10 +1,12 @@
 module.exports = function(app, db) {
-  //CRUD Test
+  // findall
   app.get("/api/all", function(req, res) {
     db.Item.findAll({}).then(function(result) {
       res.json(result);
     });
   });
+
+  // create a new one
   app.post("/api/new", function(req, res) {
     db.Item.create({
       name: req.body.name,
@@ -14,6 +16,19 @@ module.exports = function(app, db) {
       res.json(result);
     });
   });
+
+  // find one
+  app.get("/api/:id", function(req, res) {
+    db.Item.findAll({
+      where: {
+        id: req.params.id
+      }
+    }).then(function(result) {
+      res.json(result);
+    });
+  });
+
+  // update an existing one
   app.put("/api/update/:id", function(req, res) {
     db.Item.update(
       {
@@ -28,6 +43,8 @@ module.exports = function(app, db) {
       res.json(result);
     });
   });
+
+  // delete one
   app.delete("/api/delete/:id", function(req, res) {
     db.Item.destroy({
       where: {
