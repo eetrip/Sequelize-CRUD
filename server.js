@@ -13,11 +13,11 @@ var apiRoutes = require("./app/routes/apiRoutes.js");
 //   workerData
 // } = require("worker_threads");
 
-// const cluster = require("cluster");
-// const numCPUs = require("os").cpus().length;
-// console.log(`
-// number of cpu alloted ${numCPUs}
-// `);
+const cluster = require("cluster");
+const numCPUs = require("os").cpus().length;
+console.log(`
+number of cpu alloted ${numCPUs}
+`);
 
 // console.log(`
 // ------an important log-----
@@ -93,36 +93,36 @@ apiRoutes(app, db);
 // --------------------XXXXXXXXXXXXXXXXXXXX-------------
 // CLUSTER HERE
 
-// if (cluster.isMaster) {
-//   console.log(`master ${process.pid} is running`);
+if (cluster.isMaster) {
+  console.log(`master ${process.pid} is running`);
 
-//   for (let i = 0; i < numCPUs; i++) {
-//     cluster.fork();
-//   }
-//   cluster.on("exit", (worker, code, signal) => {
-//     console.log(`worker ${worker.process.pid} died`);
-//     console.log(
-//       `
-//     code
-//     `,
-//       code
-//     );
-//     console.log(
-//       `
-//     signal
-//     `,
-//       signal
-//     );
-//   });
-// } else {
-//   db.sequelize.sync().then(function() {
-//     app.listen(3000);
-//   });
-//   console.log(`
-//   worker ${process.pid} started
-//   `);
-// }
-// // console.log(`Listening on port ${PORT}`);
+  for (let i = 0; i < numCPUs; i++) {
+    cluster.fork();
+  }
+  cluster.on("exit", (worker, code, signal) => {
+    console.log(`worker ${worker.process.pid} died`);
+    console.log(
+      `
+    code
+    `,
+      code
+    );
+    console.log(
+      `
+    signal
+    `,
+      signal
+    );
+  });
+} else {
+  db.sequelize.sync().then(function() {
+    app.listen(3000);
+  });
+  console.log(`
+  worker ${process.pid} started
+  `);
+}
+// console.log(`Listening on port ${PORT}`);
 
 // //          -------------XXXXXXXXXXXXXXXXXX----------------
 // // WORKER THREAD HERE
@@ -167,8 +167,8 @@ apiRoutes(app, db);
 
 // console.log(`Listening on port ${PORT}`);
 
-db.sequelize.sync().then(function() {
-  app.listen(3000, function() {
-    console.log(`Listening on port ${PORT}`);
-  });
-});
+// db.sequelize.sync().then(function() {
+//   app.listen(3000, function() {
+//     console.log(`Listening on port ${PORT}`);
+//   });
+// });
