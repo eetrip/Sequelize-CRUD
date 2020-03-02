@@ -1,13 +1,17 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
-    "database": "testdb",
+    "password": "mysql",
+    "database": "crudtest_db",
     "host": "localhost",
-    "dialect": "postgres",
-    "entities": ["name", "price", "categotry"],
+    "dialect": "mysql",
+    "pool": {
+      "max": 10,
+      "idle": 10000
+    },
+    "databaseurl": "mysql://localhost:3306/crudtest_db",
     "synchronize": true,
-    "logging": false,
+    "logging": true,
     "operatorsAliases": {
       "$and": "Op.and",
       "$or": "Op.or",
