@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "esprima": "^4.0.1",
     "express": "^4.16.4",
     "mysql2": "^1.6.1",
     "pg": "^7.18.2",

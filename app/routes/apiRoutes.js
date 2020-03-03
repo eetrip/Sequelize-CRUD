@@ -55,6 +55,7 @@ module.exports = function(app, db) {
     });
   });
 
+  // verification response for loader.io for api load testing
   // app.get("/loaderio-d09d835ae43ae54511fb785f48259ad3", function(req, res) {
   //   res.send("loaderio-d09d835ae43ae54511fb785f48259ad3");
   // });
