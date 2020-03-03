@@ -6,6 +6,7 @@ var bodyParser = require("body-parser");
 var PORT = process.env.PORT || 3000;
 var db = require("./models");
 var apiRoutes = require("./app/routes/apiRoutes.js");
+// remove
 // const {
 //   Worker,
 //   isMainThread,
