@@ -21,6 +21,10 @@ if (config.use_env_variable) {
     config.username,
     config.password,
     config
+    // pool: {
+    //   max: 10,
+    //   idle: 10000
+    // }
   );
 }
 

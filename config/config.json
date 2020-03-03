@@ -11,7 +11,7 @@
     },
     "databaseurl": "mysql://localhost:3306/crudtest_db",
     "synchronize": true,
-    "logging": true,
+    "logging": false,
     "operatorsAliases": {
       "$and": "Op.and",
       "$or": "Op.or",

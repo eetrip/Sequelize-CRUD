@@ -76,8 +76,8 @@ var apiRoutes = require("./app/routes/apiRoutes.js");
 // console.log(https.globalAgent.maxFreeSockets);
 // console.log(http.globalAgent.maxFreeSockets);
 
-http.globalAgent.maxFreeSockets = 25;
-https.globalAgent.maxFreeSockets = 25;
+// http.globalAgent.maxFreeSockets = 1;
+// https.globalAgent.maxFreeSockets = 1;
 
 //data parsing part
 app.use(bodyParser.json());
@@ -122,7 +122,7 @@ apiRoutes(app, db);
 //   worker ${process.pid} started
 //   `);
 // }
-// // console.log(`Listening on port ${PORT}`);
+// console.log(`Listening on port ${PORT}`);
 
 // //          -------------XXXXXXXXXXXXXXXXXX----------------
 // // WORKER THREAD HERE
