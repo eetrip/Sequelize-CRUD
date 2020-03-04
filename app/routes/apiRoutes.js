@@ -1,3 +1,6 @@
+// import calculatePrimes from "../../controller/controller";
+let calculatePrimes = require("../../controller/controller");
+
 module.exports = function(app, db) {
   // findall
   app.get("/api/all", function(req, res) {
@@ -54,6 +57,8 @@ module.exports = function(app, db) {
       res.json(result);
     });
   });
+
+  app.get("/api/worker", calculatePrimes);
 
   // verification response for loader.io for api load testing
   // app.get("/loaderio-d09d835ae43ae54511fb785f48259ad3", function(req, res) {
