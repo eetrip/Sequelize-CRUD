@@ -1,8 +1,7 @@
 # Sequelize-CRUD
 
 A simple rest api using Node.js Express , Sequelize and MySQL
-
-This project is a testing on the sequelize ORM for node.js. You can play around with the CRUD operations using postman (port 3000).
+(port 3000).
 
 ## To install
 
