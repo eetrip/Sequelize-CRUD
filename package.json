@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
-    "parsertest": "node parseSpeedTest/test.js"
+    "parsertest": "node parseSpeedTest/test.js",
+    "workertest": "node worker/index.js"
   },
   "keywords": [],
   "author": "",
@@ -15,11 +16,15 @@
     "acorn": "^7.1.1",
     "babel-generator": "^6.26.1",
     "babylon": "^6.18.0",
+    "benchmark": "^2.1.4",
     "body-parser": "^1.18.3",
+    "csv-writer": "^1.6.0",
     "escodegen": "^1.14.1",
     "esprima": "^4.0.1",
     "express": "^4.16.4",
+    "inquirer": "^7.0.5",
     "mysql2": "^1.6.1",
+    "ora": "^4.0.3",
     "pg": "^7.18.2",
     "sequelize": "^5.21.5",
     "socket.io": "^2.3.0"

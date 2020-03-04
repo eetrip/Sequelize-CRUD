@@ -3,7 +3,6 @@ var acorn = require("acorn");
 var esprima = require("esprima");
 var babelGenerator = require("babel-generator");
 var escodegen = require("escodegen");
-//var kkk = require("../parseSpeedTest/jquery")
 
 var code = require("fs")
   .readFileSync(

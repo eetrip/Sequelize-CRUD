@@ -10,15 +10,30 @@ A simple rest api using Node.js Express , Sequelize and MySQL
 ## To run
 
 - run npm start
-- run npm run parsertest (speed comparison of babel vs esprima)
 
 ## API routes :
 
 - /api/all - GET
+- /api/:id - GET(one)
 - /api/new - POST
 - /api/update/:id - PUT
 - /api/delete/:id - DELETE
-- /api/worker - testing worker threads
+
+## Parser speed test
+
+#### to run
+
+- npm run parsertest
+
+parsing a sample js file (jquery.js) presents comparision between parsing speed of babel vs acorn vs esprima
+
+## Worker thread
+
+#### to run
+
+- npm run workertest
+
+untill the task becomes cpu intensive (upto the value of 1000000(ten lakh)), the "normal sieve" or computing without worker threads presents the best results but observation changes drastically when the task becomes intensive (at the value of 10000000(one crore)) in that situation the sharedArrayBuffer setup of worker threads presents the best results (upto 10 times faster than normal sieve)
 
 ### database to be created manually
 
