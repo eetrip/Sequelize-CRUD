@@ -6,11 +6,12 @@ This project is a testing on the sequelize ORM for node.js. You can play around 
 
 ## To install
 
-- run npm install
+- run npm ci
 
 ## To run
 
 - run npm start
+- run npm run parsertest (speed comparison of babel vs esprima)
 
 ## API routes :
 
@@ -18,6 +19,7 @@ This project is a testing on the sequelize ORM for node.js. You can play around 
 - /api/new - POST
 - /api/update/:id - PUT
 - /api/delete/:id - DELETE
+- /api/worker - testing worker threads
 
 ### database to be created manually
 
