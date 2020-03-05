@@ -38,9 +38,11 @@ untill the task becomes cpu intensive (upto the value of 1000000(ten lakh)), the
 running without worker threads doesnt break but after going above the value of 9x8times the time taken to complete the calculation exeeds over 70+ seconds
 can result in timeouts.
 
-running with array buffer worker thread runs the calculations upto the value of 9x9times in under to upto 50 seconds but the buffer allocation breaks at values above 9x10 using Int8Array();
+running with array worker thread breaks at 9x9times resulting in exceeding the heap size.
 
-running with sharedArrayBuffer worker thread runs the calculations upto the value of 9x9times in under to upto 20 seconds but the buffer allocation breaks at values above 9x10 when using Int8Array();
+running with array buffer worker thread runs the calculations upto the value of 9x9times in under to upto 50 seconds but the buffer allocation breaks at values above 9x10times using Int8Array();
+
+running with sharedArrayBuffer worker thread runs the calculations upto the value of 9x9times in under to upto 20 seconds but the buffer allocation breaks at values above 9x10times when using Int8Array();
 
 ### database to be created manually
 
