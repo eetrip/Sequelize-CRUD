@@ -33,7 +33,14 @@ parsing a sample js file (jquery.js) presents comparision between parsing speed 
 
 - npm run workertest
 
-untill the task becomes cpu intensive (upto the value of 1000000(ten lakh)), the "normal sieve" or computing without worker threads presents the best results but observation changes drastically when the task becomes intensive (at the value of 10000000(one crore)) in that situation the sharedArrayBuffer setup of worker threads presents the best results (upto 10 times faster than normal sieve)
+untill the task becomes cpu intensive (upto the value of 1000000(ten lakh)), the "normal sieve" or computing without worker threads presents the best results but observation changes drastically when the task becomes intensive (at the value of 10000000(one crore)) in that situation the sharedArrayBuffer setup of worker threads presents the best results (upto 10 times faster than normal sieve).
+
+running without worker threads doesnt break but after going above the value of 9x8times the time taken to complete the calculation exeeds over 70+ seconds
+can result in timeouts.
+
+running with array buffer worker thread runs the calculations upto the value of 9x9times in under to upto 50 seconds but the buffer allocation breaks at values above 9x10 using Int8Array();
+
+running with sharedArrayBuffer worker thread runs the calculations upto the value of 9x9times in under to upto 20 seconds but the buffer allocation breaks at values above 9x10 when using Int8Array();
 
 ### database to be created manually
 
