@@ -1,10 +1,10 @@
 // var userModel = require("./mod")
 import route from "../routes/routes";
-var userModel = require("../models/user");
+// var userModel = require("../models/user");
 
 // module.exports = function (app, db) {};
 
-export const allApi = route(async (req, res) => {
+export const userController = route(async (req, res) => {
   try {
     const response = await module.list({ something });
     console.log(response);

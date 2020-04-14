@@ -6,3 +6,6 @@ module.exports = function userModel(app, db) {
     res.json(result);
   });
 };
+
+
+export default class 
