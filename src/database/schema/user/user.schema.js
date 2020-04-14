@@ -7,7 +7,7 @@ const userSchema = {
     primaryKey: true,
     autoIncrement: true,
   },
-  username: {
+  userName: {
     type: Sequelize.STRING,
     defaultValue: "",
     allowNull: false,
@@ -29,11 +29,6 @@ const userSchema = {
     allowNull: false,
     unique: true,
     isEmail: true,
-  },
-  gender: {
-    type: Sequelize.ENUM(...GENDER),
-    defaultValue: "",
-    allowNull: true,
   },
   lastLoggedinOn: {
     type: Sequelize.DATE,

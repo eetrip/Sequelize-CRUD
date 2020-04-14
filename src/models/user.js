@@ -14,12 +14,18 @@ export default class UserModel extends BaseModel {
     this.UserModel = this.connection.define("user", userSchema);
   }
 
-  list = async (options) => {
+  list = async () => {
     try {
-      const Op = this.Op;
+      // const Op = this.Op;
       const users = await this.UserModel.findAll({
-        attributes: ["userId", "userName", "firstName", "lastName"],
+        attributes: ["userId", "userName", "firstName", "lastName", "gender"],
       });
-    } catch {}
+      return users.map((userData) => {
+        const user = userData.get({ plain: true });
+        return { ...users };
+      });
+    } catch (error) {
+      console.error("some error");
+    }
   };
 }

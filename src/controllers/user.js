@@ -12,8 +12,7 @@ export const userController = route(async (req, res) => {
     const response = await userDb.list({});
     console.log(response);
     res.json(response);
-  } catch {
-    console.log(error in allApi);
-    return "error";
+  } catch (error) {
+    console.log("error in allApi");
   }
 });

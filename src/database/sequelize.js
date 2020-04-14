@@ -1,5 +1,5 @@
 import Sequelize from "sequelize";
-import config from "../../config/config";
+import config from "../database/config/config";
 // import { getEnv } from
 // export const ENVIRONMENT = getEnv("");
 export const ENVIRONMENT = "development";
@@ -28,6 +28,7 @@ const sequelize = new Sequelize(
 );
 
 sequelize
+  .authenticate()
   .then(() => {
     console.log("connection established successfuly");
   })
