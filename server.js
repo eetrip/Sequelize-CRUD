@@ -15,11 +15,11 @@ var apiRoutes = require("./app/routes/apiRoutes.js");
 // } = require("worker_threads");
 
 // declaration for cluster
-const cluster = require("cluster");
-const numCPUs = require("os").cpus().length;
-console.log(`
-number of cpu alloted ${numCPUs}
-`);
+// const cluster = require("cluster");
+// const numCPUs = require("os").cpus().length;
+// console.log(`
+// number of cpu alloted ${numCPUs}
+// `);
 
 // let worker = cluster.worker;
 
@@ -37,24 +37,24 @@ apiRoutes(app, db);
 // --------------------XXXXXXXXXXXXXXXXXXXX-------------
 // CLUSTER HERE
 
-if (cluster.isMaster) {
-  console.log(`master ${process.pid} is running`);
+// if (cluster.isMaster) {
+//   console.log(`master ${process.pid} is running`);
 
-  for (let i = 0; i < numCPUs; i++) {
-    cluster.fork();
-  }
-  cluster.on("exit", (worker, code, signal) => {
-    console.log(`worker ${worker.process.pid} died`);
-  });
-} else {
-  db.sequelize.sync().then(function() {
-    app.listen(PORT);
-  });
-  console.log(`
-  worker ${process.pid} started
-  `);
-}
-console.log(`Listening on port ${PORT}`);
+//   for (let i = 0; i < numCPUs; i++) {
+//     cluster.fork();
+//   }
+//   cluster.on("exit", (worker, code, signal) => {
+//     console.log(`worker ${worker.process.pid} died`);
+//   });
+// } else {
+//   db.sequelize.sync().then(function() {
+//     app.listen(PORT);
+//   });
+//   console.log(`
+//   worker ${process.pid} started
+//   `);
+// }
+// console.log(`Listening on port ${PORT}`);
 
 //          -------------XXXXXXXXXXXXXXXXXX----------------
 
@@ -103,8 +103,8 @@ console.log(`Listening on port ${PORT}`);
 //          -------------XXXXXXXXXXXXXXXXXX----------------
 
 // default server calling
-// db.sequelize.sync().then(function() {
-//   app.listen(3000, function() {
-//     console.log(`Listening on port ${PORT}`);
-//   });
-// });
+db.sequelize.sync().then(function () {
+  app.listen(3000, function () {
+    console.log(`Listening on port ${PORT}`);
+  });
+});
