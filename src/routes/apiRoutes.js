@@ -1,6 +1,4 @@
-// import calculatePrimes from "../../controller/controller";
-// let calculatePrimes = require("../../controller/controller");
-// trying
+var userController = require("../controllers/user");
 
 module.exports = function (app, db) {
   // findall
